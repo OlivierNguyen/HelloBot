@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SETTINGS } from '/settings';
+import { SETTINGS } from '../settings';
 
 axios.defaults.baseURL = SETTINGS.API_ROOT;
 

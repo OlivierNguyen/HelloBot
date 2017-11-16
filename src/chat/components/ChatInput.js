@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
+import PropTypes from 'prop-types';
 
 export default class ChatInput extends Component {
+    static propTypes = {
+        onSendMessage: PropTypes.func.isRequired,
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +18,7 @@ export default class ChatInput extends Component {
     }
 
     sendMessage() {
-        this.props.onSendMessage && this.props.onSendMessage(this.state.value);
+        this.props.onSendMessage(this.state.value);
         this.setState({ value: '' });
     }
 

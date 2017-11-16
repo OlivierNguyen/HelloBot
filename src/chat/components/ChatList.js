@@ -39,7 +39,6 @@ export default class ChatList extends Component {
                         key={index}
                         text={data.text}
                         position={data.position}
-                        type={data.type}
                         delay={data.delay}
                     />
                 ))}
