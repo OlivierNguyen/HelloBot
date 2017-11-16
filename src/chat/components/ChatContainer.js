@@ -25,18 +25,22 @@ export default class ChatContainer extends Component {
     }
 
     onSendMessage(text) {
-        this.setState(prevState => ({
-            data: append(
-                {
-                    text,
-                    position: 'right',
-                    delay: 0,
-                },
-                prevState.data
-            ),
-        }), () => {
-            this.getMessageFromBot(text);
-        });
+        this.setState(
+            prevState => ({
+                data: append(
+                    {
+                        text,
+                        position: 'right',
+                        delay: 0,
+                        type: 'text',
+                    },
+                    prevState.data
+                ),
+            }),
+            () => {
+                this.getMessageFromBot(text);
+            }
+        );
     }
 
     getMessageFromBot(text) {
@@ -45,7 +49,20 @@ export default class ChatContainer extends Component {
             language: SETTINGS.BOT_LANGUAGE,
             conversation_id: 42,
         }).then(res => {
-            console.log(res);
+            const messages = res.data.results.messages;
+            for (let message of messages) {
+                this.setState(prevState => ({
+                    data: append(
+                        {
+                            text: message.content,
+                            position: 'left',
+                            delay: Math.floor(Math.random() * 500) + 500, // Add a delay between 500 and 1000ms
+                            type: message.type,
+                        },
+                        prevState.data
+                    ),
+                }));
+            }
         });
     }
 

@@ -40,6 +40,7 @@ export default class ChatList extends Component {
                         text={data.text}
                         position={data.position}
                         delay={data.delay}
+                        type={data.type}
                     />
                 ))}
             </div>

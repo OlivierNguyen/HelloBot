@@ -5,6 +5,7 @@ export default class ChatBubbleText extends Component {
     static propTypes = {
         text: PropTypes.string.isRequired,
         position: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
         delay: PropTypes.number,
     };
 
@@ -27,7 +28,7 @@ export default class ChatBubbleText extends Component {
     }
 
     render() {
-        const { position } = this.props;
+        const { text, position, type } = this.props;
         const isSelf = position === 'right';
 
         const S = {
@@ -45,8 +46,18 @@ export default class ChatBubbleText extends Component {
                 textAlign: 'left',
                 display: 'inline-block',
                 maxWidth: 'calc(100% - 100px)',
+                wordWrap: 'break-word',
+            },
+            image: {
+                maxWidth: 200,
+                maxHeight: 200,
             },
         };
+
+        let content = <span style={S.bubble}>{text}</span>;
+        if (type === 'picture') {
+            content = <img style={S.image} src={text} alt="" />;
+        }
 
         return (
             <div style={S.container}>
@@ -54,7 +65,7 @@ export default class ChatBubbleText extends Component {
                     {this.state.isLoading ? (
                         <span style={S.bubble}>...</span>
                     ) : (
-                        <span style={S.bubble}>{this.props.text}</span>
+                        content
                     )}
                 </div>
             </div>
