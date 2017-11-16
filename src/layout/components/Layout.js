@@ -5,7 +5,12 @@ export default class Layout extends Component {
     render() {
         const S = {
             container: {},
-            buttonContainer: {},
+            buttonContainer: {
+                position: 'absolute',
+                bottom: 0,
+                right: 0,
+                padding: 20,
+            },
         };
 
         return (
