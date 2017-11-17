@@ -43,10 +43,18 @@ export default class Layout extends Component {
                 marginRight: 15,
                 marginBottom: 100,
             },
+            logo: {
+                padding: 20,
+            },
         };
 
         return (
             <div style={S.container}>
+                <img
+                    style={S.logo}
+                    src="/images/recast-ai-logo-inline.svg"
+                    height="120"
+                />
                 <div style={S.chatContainer} ref={ref => (this.chat = ref)}>
                     <ChatContainer />
                 </div>
