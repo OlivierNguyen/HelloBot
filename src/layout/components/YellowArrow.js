@@ -34,6 +34,7 @@ export default class YellowArrow extends Component {
     }
 
     bounceAnimation() {
+        TweenMax.set(this.arrow, { opacity: 1 });
         return TweenMax.to(this.arrow, 0.3, {
             display: 'block',
             width: 200,
