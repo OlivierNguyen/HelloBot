@@ -54,6 +54,21 @@ export default class Layout extends Component {
                 bottom: 0,
                 right: 80,
             },
+            containerFooter: {
+                display: 'flex',
+                alignItems: 'center',
+                position: 'absolute',
+                bottom: 0,
+                paddingLeft: 20,
+                paddingBottom: 10,
+            },
+            signature: {
+                color: '#efefef',
+            },
+            github: {
+                width: 25,
+                marginLeft: 10,
+            },
         };
 
         return (
@@ -79,6 +94,16 @@ export default class Layout extends Component {
                         isChatOpen={value =>
                             this.setState({ isChatOpen: value })}
                     />
+                </div>
+                <div style={S.containerFooter}>
+                    <div style={S.signature}>Olivier Nguyen @2017</div>
+                    <a href="https://github.com/OlivierNguyen/HelloBot">
+                        <img
+                            style={S.github}
+                            alt="github"
+                            src="/images/Github-Mark-32px.png"
+                        />
+                    </a>
                 </div>
             </div>
         );
