@@ -15,6 +15,7 @@ export default class ChatHeader extends Component {
             },
             title: {
                 fontSize: 16,
+                marginBottom: 5,
             },
             description: {
                 fontSize: 14,
@@ -23,7 +24,7 @@ export default class ChatHeader extends Component {
         return (
             <div style={S.container}>
                 <div style={S.title}>HelloBot</div>
-                <div style={S.description}>Description here</div>
+                <div style={S.description}>This bot is using Recast.ai API</div>
             </div>
         );
     }
