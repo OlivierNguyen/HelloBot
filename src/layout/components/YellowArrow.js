@@ -60,6 +60,7 @@ export default class YellowArrow extends Component {
     render() {
         return [
             <div
+                key="description"
                 style={{
                     width: 75,
                     marginBottom: 10,
@@ -70,6 +71,7 @@ export default class YellowArrow extends Component {
                 {this.props.description}
             </div>,
             <img
+                key="image"
                 style={{
                     width: 190,
                     textAlign: 'right',
