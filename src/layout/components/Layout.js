@@ -101,7 +101,7 @@ export default class Layout extends Component {
                         <img
                             style={S.github}
                             alt="github"
-                            src="/images/Github-Mark-32px.png"
+                            src="/images/github-logo.png"
                         />
                     </a>
                 </div>
