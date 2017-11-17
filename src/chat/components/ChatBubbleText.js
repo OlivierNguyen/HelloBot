@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import TweenMax from 'gsap';
 
 export default class ChatBubbleText extends Component {
     static propTypes = {
@@ -17,6 +18,7 @@ export default class ChatBubbleText extends Component {
     }
 
     componentDidMount() {
+        TweenMax.to(this.bubble, 0.5, {opacity: 1});
         if (this.props.delay) {
             this.setState({ isLoading: true }, () => {
                 setTimeout(
@@ -36,6 +38,7 @@ export default class ChatBubbleText extends Component {
                 textAlign: position,
             },
             containerBubble: {
+                opacity: 0, // Init to 0 to apply animation
                 margin: 8,
             },
             bubble: {
@@ -61,7 +64,7 @@ export default class ChatBubbleText extends Component {
 
         return (
             <div style={S.container}>
-                <div style={S.containerBubble}>
+                <div style={S.containerBubble} ref={ref => this.bubble = ref}>
                     {this.state.isLoading ? (
                         <span style={S.bubble}>...</span>
                     ) : (
