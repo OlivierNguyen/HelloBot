@@ -30,6 +30,8 @@ export default class ChatInput extends Component {
                 height: 60,
                 paddingLeft: 15,
                 paddingRight: 10,
+                backgroundColor: '#fff',
+                borderRadius: '0 0 5px 5px',
             },
             buttonContainer: {
                 marginLeft: 10,

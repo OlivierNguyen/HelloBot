@@ -29,6 +29,7 @@ export default class ChatList extends Component {
             container: {
                 height: this.props.height || '100%',
                 overflowY: 'auto',
+                backgroundColor: '#fff',
             },
         };
 

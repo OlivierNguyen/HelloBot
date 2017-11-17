@@ -11,6 +11,7 @@ export default class ChatHeader extends Component {
                 height: 80,
                 backgroundColor: '#ffc525',
                 color: '#fff',
+                borderRadius: '5px 5px 0 0',
             },
             title: {
                 fontSize: 16,

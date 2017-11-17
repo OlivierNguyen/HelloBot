@@ -5,6 +5,7 @@ import ChatList from './ChatList';
 import ChatInput from './ChatInput';
 import { HelloChatCaller } from './../../utils/dataController';
 import { SETTINGS } from '../../settings';
+import { WIDTH_CHAT_CONTAINER, HEIGHT_CHAT_CONTAINER } from '../../constants';
 
 export default class ChatContainer extends Component {
     constructor(props) {
@@ -69,9 +70,10 @@ export default class ChatContainer extends Component {
     render() {
         const S = {
             container: {
-                width: 360,
-                height: 500,
-                border: 'solid 1px #ababab',
+                width: WIDTH_CHAT_CONTAINER,
+                height: HEIGHT_CHAT_CONTAINER,
+                boxShadow:
+                    'rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px',
             },
         };
         return (
