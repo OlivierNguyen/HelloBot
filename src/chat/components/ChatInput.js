@@ -52,7 +52,7 @@ export default class ChatInput extends Component {
                 />
                 <div style={S.buttonContainer}>
                     <FlatButton
-                        label="Envoyer"
+                        label="Send"
                         primary={true}
                         onClick={this.sendMessage}
                         disabled={!this.state.value}
